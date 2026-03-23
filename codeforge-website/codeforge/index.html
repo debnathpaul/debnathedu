@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeForge — Real-World Coding Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-bracket">{</span>CodeForge<span class="logo-bracket">}</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="#features">Why Us</a></li>
+      <li><a href="#testimonials">Results</a></li>
+      <li><a href="courses.html" class="nav-cta">Start Free →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="courses.html">Courses</a>
+  <a href="#features">Why Us</a>
+  <a href="#testimonials">Results</a>
+  <a href="courses.html" class="mobile-cta">Start Free</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <canvas id="particleCanvas"></canvas>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge reveal">
+      <span class="badge-dot"></span>
+      Itch Score 86.5 — Top EdTech Problem 2024
+    </div>
+
+    <h1 class="hero-title reveal">
+      <span class="line">Your degree</span>
+      <span class="line accent-line">won't get you</span>
+      <span class="line">hired. <span class="glitch" data-text="Skills will.">Skills will.</span></span>
+    </h1>
+
+    <p class="hero-sub reveal">
+      Industry-simulation labs. Real project experience. 
+      The bridge between college theory and company expectations.
+    </p>
+
+    <div class="hero-actions reveal">
+      <a href="courses.html" class="btn-primary">
+        <span>Start Learning Free</span>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+      <button class="btn-video" id="playVideo">
+        <div class="play-ring">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span>See how it works</span>
+      </button>
+    </div>
+
+    <div class="hero-stats reveal">
+      <div class="stat"><span class="stat-num" data-target="2400">0</span><span class="stat-suffix">+</span><span class="stat-label">Students trained</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-target="89">0</span><span class="stat-suffix">%</span><span class="stat-label">Placement rate</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num" data-target="150">0</span><span class="stat-suffix">+</span><span class="stat-label">Hiring partners</span></div>
+    </div>
+  </div>
+
+  <div class="hero-visual reveal">
+    <div class="code-window">
+      <div class="window-bar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="window-title">real_project.py</span>
+      </div>
+      <div class="code-body" id="codeTyper"></div>
+    </div>
+    <div class="window-reflection"></div>
+  </div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div class="video-modal" id="videoModal">
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&rel=0"
+        id="videoFrame"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM SECTION -->
+<section class="problem-section" id="about">
+  <div class="container">
+    <div class="section-label reveal">The Problem</div>
+    <h2 class="section-title reveal">
+      Companies hire for <span class="accent">skills</span>.<br>
+      Colleges teach for <span class="strike">exams</span>.
+    </h2>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal" data-delay="0">
+        <div class="card-icon">📚</div>
+        <h3>Theory overload</h3>
+        <p>3 years of lectures, zero real debugging experience. Students can recite algorithms but can't fix a broken API.</p>
+      </div>
+      <div class="problem-card reveal" data-delay="100">
+        <div class="card-icon">💼</div>
+        <h3>Hiring gap</h3>
+        <p>Fresh graduates fail basic coding interviews at top companies — not because they're not smart, but because they've never built anything real.</p>
+      </div>
+      <div class="problem-card reveal" data-delay="200">
+        <div class="card-icon">🎯</div>
+        <h3>No industry context</h3>
+        <p>College projects are artificial. Real companies work with messy data, deadlines, and team code. Students are never exposed to this.</p>
+      </div>
+    </div>
+
+    <div class="itch-score-card reveal">
+      <div class="itch-label">Razorpay Validated Problem</div>
+      <div class="scores-row">
+        <div class="score-item">
+          <div class="score-bar"><div class="bar-fill" data-width="90"></div></div>
+          <span class="score-name">Severity</span>
+          <span class="score-val">9/10</span>
+        </div>
+        <div class="score-item">
+          <div class="score-bar"><div class="bar-fill" data-width="90"></div></div>
+          <span class="score-name">TAM</span>
+          <span class="score-val">9/10</span>
+        </div>
+        <div class="score-item">
+          <div class="score-bar"><div class="bar-fill" data-width="85"></div></div>
+          <span class="score-name">Whitespace</span>
+          <span class="score-val">8.5/10</span>
+        </div>
+        <div class="score-item">
+          <div class="score-bar"><div class="bar-fill" data-width="70"></div></div>
+          <span class="score-name">Frequency</span>
+          <span class="score-val">7/10</span>
+        </div>
+      </div>
+      <div class="itch-total">Total Itch Score: <strong>86.5</strong> / 100</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="container">
+    <div class="section-label reveal">Our Approach</div>
+    <h2 class="section-title reveal">Built different.<br>Because the problem is different.</h2>
+
+    <div class="features-layout">
+      <div class="features-list">
+        <div class="feature-item reveal active" data-feature="0">
+          <div class="feature-num">01</div>
+          <div class="feature-text">
+            <h3>Industry Simulation Labs</h3>
+            <p>Work inside replicas of real company codebases — Razorpay, Swiggy, Zepto. Messy, real, and production-like.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal" data-feature="1">
+          <div class="feature-num">02</div>
+          <div class="feature-text">
+            <h3>Live Code Reviews</h3>
+            <p>Senior engineers from top companies review your code every week. Brutal, honest, and exactly how real teams work.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal" data-feature="2">
+          <div class="feature-num">03</div>
+          <div class="feature-text">
+            <h3>Project-Based Curriculum</h3>
+            <p>No MCQs. Every module ends with a working project that goes straight into your GitHub and portfolio.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal" data-feature="3">
+          <div class="feature-num">04</div>
+          <div class="feature-text">
+            <h3>Placement Network</h3>
+            <p>Direct referrals to 150+ hiring companies. Your profile goes live the moment you complete a module.</p>
+          </div>
+        </div>
+      </div>
+      <div class="feature-visual">
+        <div class="feature-screens">
+          <div class="fscreen active" id="fscreen-0">
+            <div class="fscreen-inner lab">
+              <div class="lab-header">
+                <span class="lab-tag">LIVE LAB</span>
+                <span class="lab-company">Swiggy Clone — Backend API</span>
+              </div>
+              <div class="lab-tasks">
+                <div class="task done">✓ Setup Express server</div>
+                <div class="task done">✓ Connect MongoDB</div>
+                <div class="task active-task">▶ Build order routing logic</div>
+                <div class="task">○ Add payment webhook</div>
+                <div class="task">○ Deploy on Railway</div>
+              </div>
+            </div>
+          </div>
+          <div class="fscreen" id="fscreen-1">
+            <div class="fscreen-inner review">
+              <div class="review-header">Code Review — Week 3</div>
+              <div class="review-comment">
+                <div class="reviewer">Arjun S. (ex-Zepto)</div>
+                <p>"Good structure but your SQL query here will break at 10k rows. Add an index on user_id. See line 47."</p>
+                <div class="review-line">Line 47: <code>WHERE user_id = ?</code> — missing index</div>
+              </div>
+            </div>
+          </div>
+          <div class="fscreen" id="fscreen-2">
+            <div class="fscreen-inner project">
+              <div class="project-title">Your Portfolio</div>
+              <div class="project-cards">
+                <div class="proj-card"><span>🛒</span> E-commerce API</div>
+                <div class="proj-card"><span>📊</span> Analytics Dashboard</div>
+                <div class="proj-card"><span>🔐</span> Auth System</div>
+              </div>
+              <div class="github-badge">⬡ Pushed to GitHub</div>
+            </div>
+          </div>
+          <div class="fscreen" id="fscreen-3">
+            <div class="fscreen-inner placement">
+              <div class="placement-title">Your Profile is Live 🚀</div>
+              <div class="company-list">
+                <div class="co">Razorpay</div>
+                <div class="co">Swiggy</div>
+                <div class="co">Meesho</div>
+                <div class="co">CRED</div>
+                <div class="co">Juspay</div>
+                <div class="co">+145 more</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES PREVIEW -->
+<section class="courses-preview" id="courses-preview">
+  <div class="container">
+    <div class="section-label reveal">Courses</div>
+    <h2 class="section-title reveal">Pick your path.<br>Build something real.</h2>
+
+    <div class="courses-grid">
+      <div class="course-card reveal" data-delay="0">
+        <div class="course-badge free">Free</div>
+        <div class="course-icon">⚡</div>
+        <h3>Coding Foundations Bootcamp</h3>
+        <p>Python, Git, CLI, basic DSA — the stuff colleges skip but every job needs.</p>
+        <div class="course-meta">
+          <span>🕐 6 weeks</span>
+          <span>📦 12 projects</span>
+        </div>
+        <a href="courses.html#foundations" class="course-btn">Enroll Free</a>
+      </div>
+      <div class="course-card reveal featured-course" data-delay="100">
+        <div class="course-badge popular">Most Popular</div>
+        <div class="course-icon">🚀</div>
+        <h3>Full Stack Industry Simulation</h3>
+        <p>Build 3 production apps inside real company simulations. React + Node + databases + deployment.</p>
+        <div class="course-meta">
+          <span>🕐 16 weeks</span>
+          <span>📦 8 real projects</span>
+        </div>
+        <a href="courses.html#fullstack" class="course-btn">Start Learning</a>
+      </div>
+      <div class="course-card reveal" data-delay="200">
+        <div class="course-badge">Advanced</div>
+        <div class="course-icon">🧠</div>
+        <h3>System Design + DSA Mastery</h3>
+        <p>Crack FAANG-level interviews. System design, advanced DSA, mock interviews with real engineers.</p>
+        <div class="course-meta">
+          <span>🕐 12 weeks</span>
+          <span>📦 50+ problems</span>
+        </div>
+        <a href="courses.html#sysdesign" class="course-btn">Start Learning</a>
+      </div>
+    </div>
+
+    <div class="courses-cta reveal">
+      <a href="courses.html" class="btn-primary">View All Courses →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="section-label reveal">Student Results</div>
+    <h2 class="section-title reveal">Real students.<br>Real placements.</h2>
+
+    <div class="testimonials-track">
+      <div class="testimonials-inner" id="testimonialsInner">
+        <div class="tcard">
+          <div class="tcard-top">
+            <div class="tavatar">RS</div>
+            <div>
+              <div class="tname">Rahul Sharma</div>
+              <div class="tcompany">Now at → Razorpay</div>
+            </div>
+            <div class="tstars">★★★★★</div>
+          </div>
+          <p>"I failed 6 interviews before CodeForge. The industry labs changed everything — I finally understood what 'production code' actually means."</p>
+          <div class="tsalary">₹18 LPA first job</div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-top">
+            <div class="tavatar" style="background:#7c3aed">PK</div>
+            <div>
+              <div class="tname">Priya Kulkarni</div>
+              <div class="tcompany">Now at → Swiggy</div>
+            </div>
+            <div class="tstars">★★★★★</div>
+          </div>
+          <p>"My college prepared me for nothing. CodeForge's mentors reviewed my code like I was already an employee. That mindset shift is priceless."</p>
+          <div class="tsalary">₹14 LPA first job</div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-top">
+            <div class="tavatar" style="background:#059669">AM</div>
+            <div>
+              <div class="tname">Aryan Mishra</div>
+              <div class="tcompany">Now at → CRED</div>
+            </div>
+            <div class="tstars">★★★★★</div>
+          </div>
+          <p>"The GitHub portfolio I built during the course literally got me my interview. The recruiter said 'you have more real projects than our senior candidates.'"</p>
+          <div class="tsalary">₹22 LPA first job</div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-top">
+            <div class="tavatar" style="background:#dc2626">NP</div>
+            <div>
+              <div class="tname">Neha Patil</div>
+              <div class="tcompany">Now at → Meesho</div>
+            </div>
+            <div class="tstars">★★★★★</div>
+          </div>
+          <p>"Coming from a tier-3 college, I had zero confidence. CodeForge's placement network gave me access to companies I never thought possible."</p>
+          <div class="tsalary">₹12 LPA first job</div>
+        </div>
+        <div class="tcard">
+          <div class="tcard-top">
+            <div class="tavatar" style="background:#d97706">VR</div>
+            <div>
+              <div class="tname">Vikram Rao</div>
+              <div class="tcompany">Now at → Juspay</div>
+            </div>
+            <div class="tstars">★★★★★</div>
+          </div>
+          <p>"The code review sessions are brutal but that's why they work. No bootcamp tells you the truth like CodeForge mentors do."</p>
+          <div class="tsalary">₹16 LPA first job</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-dots" id="testimonialDots"></div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-glow"></div>
+      <h2>Stop theorising.<br><span class="accent">Start building.</span></h2>
+      <p>Join 2,400+ students who chose skills over scores.</p>
+      <a href="courses.html" class="btn-primary btn-large">Get Started — It's Free →</a>
+      <div class="cta-small">No credit card. No commitment. Cancel anytime.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-bracket">{</span>CodeForge<span class="logo-bracket">}</span></div>
+        <p>Building India's most job-ready developers through real industry experience.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <a href="courses.html">All Courses</a>
+          <a href="courses.html#foundations">Free Bootcamp</a>
+          <a href="courses.html#fullstack">Full Stack</a>
+          <a href="courses.html#sysdesign">System Design</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#about">About</a>
+          <a href="#features">How it works</a>
+          <a href="#testimonials">Success Stories</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="#">LinkedIn</a>
+          <a href="#">Twitter</a>
+          <a href="#">GitHub</a>
+          <a href="#">Discord</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 CodeForge. Built with ❤️ for India's engineers.</span>
+      <span>Free forever for students.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
